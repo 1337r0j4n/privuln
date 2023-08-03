@@ -48,7 +48,7 @@ chmod +x zanexploit.sh
 
 ---
 
-- 
+- https://web.facebook.com/maing.phtml/posts/pfbid02ZxhYbJ4kYxh31KKs3nPrYpUbP9psSiifADvp1nehyGdx213dQmFU9LmZ16kNZC2xl
 
 ```
 wget https://raw.githubusercontent.com/1337r0j4n/privuln/main/eraexploit.sh
