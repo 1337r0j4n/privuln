@@ -69,3 +69,15 @@ chmod +x flixploit.sh
 ```
 ### Proof of Concept
 <img src="https://raw.githubusercontent.com/1337r0j4n/privuln/main/flixploit-poc.png">
+
+---
+
+- https://web.facebook.com/maing.phtml/posts/pfbid02X986bkY6K6wxYhbkEykT4pZ9xbdfTmry7PW5WyzxX5ZL32N4PKDHGqAoZK8K1RRjl
+
+```
+wget https://raw.githubusercontent.com/1337r0j4n/privuln/main/sbxploit.sh
+chmod +x sbxploit.sh
+./sbxploit.sh
+```
+### Proof of Concept
+<img src="https://raw.githubusercontent.com/1337r0j4n/privuln/main/sbxploit-poc.png">
